@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>devnotes on wanglun</title>
+    <link>http://blog.wanglun.org/categories/devnotes/</link>
+    <description>Recent content in devnotes on wanglun</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Sat, 27 Apr 2019 16:00:33 +0800</lastBuildDate>
+    
+	<atom:link href="http://blog.wanglun.org/categories/devnotes/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Minilib - Blocking Queue</title>
+      <link>http://blog.wanglun.org/post/minilib-blocking-queue/</link>
+      <pubDate>Sat, 27 Apr 2019 16:00:33 +0800</pubDate>
+      
+      <guid>http://blog.wanglun.org/post/minilib-blocking-queue/</guid>
+      <description>I&amp;rsquo;m a linked post in the menu. You can add other posts by adding the following line to the frontmatter:
+menu = &amp;quot;main&amp;quot;  Lorem ipsum dolor sit amet, consectetur adipiscing elit. In mauris nulla, vestibulum vel auctor sed, posuere eu lorem. Aliquam consequat augue ut accumsan mollis. Suspendisse malesuada sodales tincidunt. Vivamus sed erat ac augue bibendum porta sed id ipsum. Ut mollis mauris eget ligula sagittis cursus. Aliquam id pharetra tellus.</description>
+    </item>
+    
+  </channel>
+</rss>
