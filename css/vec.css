@@ -1,6 +1,5 @@
 @charset "UTF-8";
-@import url(//fonts.googleapis.com/css?family=Droid+Sans+Mono|Russo+One|Source+Sans+Pro:400,700);
-@import url(//use.fontawesome.com/releases/v5.0.7/css/all.css);
+@import url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.1/css/all.min.css);
 /**
  * GitHub Gist Theme
  * Author : Louis Barranqueiro - https://github.com/LouisBarranqueiro
