@@ -12,7 +12,7 @@
     
     
     <item>
-      <title>线程安全的阻塞队列(Blocking Queue)</title>
+      <title>阻塞队列(Blocking Queue)</title>
       <link>https://blog.wanglun.org/post/minilib-blocking-queue/</link>
       <pubDate>Sat, 27 Apr 2019 16:00:33 +0800</pubDate>
       
