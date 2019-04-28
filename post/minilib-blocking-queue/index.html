@@ -52,9 +52,8 @@
 <h2 id="简单介绍">简单介绍</h2>
 
 <ul>
-<li><code>Blocking Queue</code>是基于<a href="https://zh.wikipedia.org/wiki/%E7%9B%A3%E8%A6%96%E5%99%A8_(%E7%A8%8B%E5%BA%8F%E5%90%8C%E6%AD%A5%E5%8C%96)">管程</a>(<a href="https://en.wikipedia.org/wiki/Monitor_(synchronization)"><code>Monitors</code></a>)实现的一种数据结构，支持多个工作线程互斥访问共享资源。</li>
-<li><code>Blocking Queue</code>是多线程编程中，经常用到的数据结构。</li>
-<li><code>Blocking Queue</code>主要用于解决多线程任务分发、生产者-消费者问题。</li>
+<li><code>Blocking Queue</code>是基于<a href="https://zh.wikipedia.org/wiki/%E7%9B%A3%E8%A6%96%E5%99%A8_(%E7%A8%8B%E5%BA%8F%E5%90%8C%E6%AD%A5%E5%8C%96)">管程</a>(<a href="https://en.wikipedia.org/wiki/Monitor_(synchronization)"><code>Monitors</code></a>)实现的一种多线程编程中常用的数据结构</li>
+<li><code>Blocking Queue</code>可以方便地实现线程间的资源分发，用于任务队列、生产者-消费者问题。</li>
 </ul>
 
 <h2 id="应用场景">应用场景</h2>
@@ -66,7 +65,7 @@
 
 <h2 id="动手实现">动手实现</h2>
 
-<p>在<a href="https://github.com/wanglun/mini-projects/blob/master/minilib">minilib</a>中，使用<code>queue</code>作为基础队列，使用<code>mutex</code>和<code>condition_variable</code>进行多线程同步。具体如下：</p>
+<p>在<a href="https://github.com/wanglun/mini-projects/blob/master/minilib">minilib</a>中，使用<code>queue</code>作为基础队列，使用<code>mutex</code>和<code>condition_variable</code>进行线程同步，实现的固定容量的阻塞队列如下：</p>
 
 <pre><code class="language-c++">#ifndef MINILIB_BLOCKING_QUEUE_H
 #define MINILIB_BLOCKING_QUEUE_H
