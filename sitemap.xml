@@ -9,11 +9,6 @@
   </url>
   
   <url>
-    <loc>https://blog.wanglun.org/post/minilib-blocking-queue/</loc>
-    <lastmod>2019-04-27T16:00:33+08:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://blog.wanglun.org/post/</loc>
     <lastmod>2019-04-27T16:00:33+08:00</lastmod>
     <priority>0</priority>
@@ -65,6 +60,11 @@
     <loc>https://blog.wanglun.org/</loc>
     <lastmod>2019-04-27T16:00:33+08:00</lastmod>
     <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.wanglun.org/post/minilib-blocking-queue/</loc>
+    <lastmod>2019-04-27T16:00:33+08:00</lastmod>
   </url>
   
 </urlset>

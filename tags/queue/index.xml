@@ -12,13 +12,13 @@
     
     
     <item>
-      <title>Minilib - Blocking Queue</title>
+      <title>线程安全的阻塞队列(Blocking Queue)</title>
       <link>https://blog.wanglun.org/post/minilib-blocking-queue/</link>
       <pubDate>Sat, 27 Apr 2019 16:00:33 +0800</pubDate>
       
       <guid>https://blog.wanglun.org/post/minilib-blocking-queue/</guid>
-      <description>I&amp;rsquo;m a linked post in the menu. You can add other posts by adding the following line to the frontmatter:
-menu = &amp;quot;main&amp;quot;  Lorem ipsum dolor sit amet, consectetur adipiscing elit. In mauris nulla, vestibulum vel auctor sed, posuere eu lorem. Aliquam consequat augue ut accumsan mollis. Suspendisse malesuada sodales tincidunt. Vivamus sed erat ac augue bibendum porta sed id ipsum. Ut mollis mauris eget ligula sagittis cursus. Aliquam id pharetra tellus.</description>
+      <description>简单介绍  Blocking Queue是基于管程(Monitors)实现的一种数据结构，支持多个工作线程互斥访问共享资源。 Blocking Queue是多线程编程中，经常用到的数据结构。 Blocking Queue主要用于解决多线程任务分发、生产者-消费者问题。  应用场景  任务队列 生产者-消费者问题  动手实现 在minilib中，使用queue作为基础队列，使用mutex和condition_variable进行多线程同步。具体如下：
+#ifndef MINILIB_BLOCKING_QUEUE_H #define MINILIB_BLOCKING_QUEUE_H #include &amp;lt;condition_variable&amp;gt; #include &amp;lt;mutex&amp;gt; #include &amp;lt;queue&amp;gt; namespace minilib { // blocking_queue是一个固定大小的阻塞队列， // push时，如果已满，则使用条件变量阻塞等待 // pop时，如果已空，则使用条件变量阻塞等待 template &amp;lt;typename T&amp;gt; class blocking_queue { public: typedef T type; explicit blocking_queue(size_t size) : size_(size) {} ~blocking_queue() {} void pop(type&amp;amp; v) { // 需要使用unique_lock，因为在wait时先会原子的unlock，若满足条件则重新lock std::unique_lock&amp;lt;std::mutex&amp;gt; lk(cv_m_); while (queue_.empty()) { cv_.wait(lk); } v = std::move(queue_.front()); queue_.</description>
     </item>
     
   </channel>
