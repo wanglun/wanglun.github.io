@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>wanglun</title>
-    <link>https://blog.wanglun.org/</link>
-    <description>Recent content on wanglun</description>
+    <title>SQL on wanglun</title>
+    <link>https://blog.wanglun.org/tags/sql/</link>
+    <description>Recent content in SQL on wanglun</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <lastBuildDate>Mon, 29 Apr 2019 19:00:00 +0800</lastBuildDate>
     
-	<atom:link href="https://blog.wanglun.org/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://blog.wanglun.org/tags/sql/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
@@ -20,16 +20,6 @@
       <description>简介 在进行软件系统设计时，数据库选型是必不可少的工作。本文对当前主流的数据库进行简单对比，包括如下数据库：
  MySQL1: 是一个高性能、低成本、可靠性好的开源关系型数据库，MariaDB是它的一个开源分支。 Redis2: 是一个使用ANSI C编写的开源、支持网络、基于内存、可选持久性的KV存储数据库。 ElasticSearch3: 是一个基于Lucene库的搜索引擎，使用Java实现。 MongoDB4: 是一种面向文档的NoSQL数据库，使用C++实现。 HBase5: 是一个开源的NoSQL数据库，它参考了谷歌的BigTable建模，使用Java实现。 SQLite6: 是一个开源的关系型数据库，SQLite不是一个CS结构的数据库引擎，而是被集成在用户程序中，使用C实现。 LevelDB7: 是一个由Google研发的KV嵌入式数据库，使用C++实现。  对比 说明： 1. 评价粒度很粗，只适合直观感受。应用时，需要结合场景，具体分析及测试。 2. 评价分五级：好、较好、一般、较差、差。
    项目 MySQL Redis ElasticSearch MongoDB HBase SQLite LevelDB     数据规模 较好 差 较好 较好 好 一般 一般   随机读取 较好 好 一般 较好 较好 较好 较差   顺序读取 较好 好 一般 较好 较好 较好 较好   随机写入 一般 好 差 一般 较好 一般 较好   顺序写入 较好 好 差 较好 较好 较好 较好   检索功能 一般 差 好 较好 差 一般 差   关联查询 好 差 较好 一般 差 较好 差   硬件要求 低 低 高 中 中 低 低   事务支持 ACID ACID8 无 ACID9 无 ACID10 无   CS架构 是 是 是 是 是 否 否   主键索引 支持 支持 支持 支持 支持 支持 支持   二级索引 支持 不支持 支持 支持 不支持 支持 不支持    应用场景举例  MySQL  复杂关联查询 对事务、安全性要求高的OLTP(On-Line Transaction Processing)类业务 不适合大文本、图片等二进制存储  Redis  缓存等对读写性能要求高的场景 简单消息队列、计数器等  ElasticSearch  全文检索、搜索引擎 聚合分析、数据可视化  MongoDB  图片等文档小规模存储(使用GridFS可支持大文件) 无复杂关联查询、schema变更频繁的业务  HBase  海量数据 检索及关联查询需要依赖其它服务（例如ElasticSearch）  SQLite  客户端软件嵌入式存储，如Mobile App等 服务端单机少量数据存储，如个人Blog、服务配置信息等  LevelDB  客户端软件存储，如Chrome的IndexDB等 随机写入比较多，随机读取较少的业务   参考资料  https://en.</description>
-    </item>
-    
-    <item>
-      <title>阻塞队列(Blocking Queue)</title>
-      <link>https://blog.wanglun.org/post/minilib-blocking-queue/</link>
-      <pubDate>Sat, 27 Apr 2019 16:00:33 +0800</pubDate>
-      
-      <guid>https://blog.wanglun.org/post/minilib-blocking-queue/</guid>
-      <description>简介  Blocking Queue是基于管程(Monitors)实现的一种多线程编程中常用的数据结构 Blocking Queue可以方便地实现线程间的资源分发，用于任务队列、生产者-消费者问题。  应用场景  任务队列 生产者-消费者问题  动手实现 在minilib中，使用queue作为基础队列，使用mutex和condition_variable进行线程同步，实现的固定容量的阻塞队列如下：
-#ifndef MINILIB_BLOCKING_QUEUE_H #define MINILIB_BLOCKING_QUEUE_H #include &amp;lt;condition_variable&amp;gt; #include &amp;lt;mutex&amp;gt; #include &amp;lt;queue&amp;gt; namespace minilib { // blocking_queue是一个固定大小的阻塞队列， // push时，如果已满，则使用条件变量阻塞等待 // pop时，如果已空，则使用条件变量阻塞等待 template &amp;lt;typename T&amp;gt; class blocking_queue { public: typedef T type; explicit blocking_queue(size_t size) : size_(size) {} ~blocking_queue() {} void pop(type&amp;amp; v) { // 需要使用unique_lock，因为在wait时先会原子的unlock，若满足条件则重新lock std::unique_lock&amp;lt;std::mutex&amp;gt; lk(cv_m_); while (queue_.empty()) { cv_.wait(lk); } v = std::move(queue_.front()); queue_.pop(); cv_.notify_one(); } void push(const type&amp;amp; v) { std::unique_lock&amp;lt;std::mutex&amp;gt; lk(cv_m_); while (queue_.</description>
     </item>
     
   </channel>
