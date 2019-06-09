@@ -6,10 +6,21 @@
     <description>Recent content in Posts on wanglun</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Mon, 29 Apr 2019 19:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 09 Jun 2019 17:40:00 +0800</lastBuildDate>
     
 	<atom:link href="https://blog.wanglun.org/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>数字的中文读法</title>
+      <link>https://blog.wanglun.org/post/number-in-chinese/</link>
+      <pubDate>Sun, 09 Jun 2019 17:40:00 +0800</pubDate>
+      
+      <guid>https://blog.wanglun.org/post/number-in-chinese/</guid>
+      <description>题目 本次的编码练习题是“数字的中文读法”，需要完成数字与其中文读法之间的相互转换，例如：
+ 123 -&amp;gt; 一百二十三 200 -&amp;gt; 二百 201 -&amp;gt; 二百零一 2001 -&amp;gt; 二千零一 200000 -&amp;gt; 二十万 210000 -&amp;gt; 二十一万 210500 -&amp;gt; 二十一万零五百 123410500 -&amp;gt; 一亿二千三百四十一万零五百 2023400500 -&amp;gt; 二十亿二千三百四十万零五百 1002023400500 -&amp;gt; 一万零二十亿二千三百四十万零五百  动手实现 重点是分析中文读法的规律，尽量多写一些测试用例，以覆盖到不同的情况。示例代码如下：
+#include &amp;lt;string&amp;gt; #include &amp;lt;unordered_map&amp;gt; #include &amp;lt;cassert&amp;gt; // 可以处理最长13位的数字 std::string say_number_in_chinese_v1(long num) { // 单位映射 static const std::string units_map[] = {&amp;quot;&amp;quot;, &amp;quot;十&amp;quot;, &amp;quot;百&amp;quot;, &amp;quot;千&amp;quot;, &amp;quot;万&amp;quot;, &amp;quot;十&amp;quot;, &amp;quot;百&amp;quot;, &amp;quot;千&amp;quot;, &amp;quot;亿&amp;quot;, &amp;quot;十&amp;quot;, &amp;quot;百&amp;quot;, &amp;quot;千&amp;quot;, &amp;quot;万&amp;quot;}; // 数字映射 static const std::string digits_map[] = {&amp;quot;零&amp;quot;, &amp;quot;一&amp;quot;, &amp;quot;二&amp;quot;, &amp;quot;三&amp;quot;, &amp;quot;四&amp;quot;, &amp;quot;五&amp;quot;, &amp;quot;六&amp;quot;, &amp;quot;七&amp;quot;, &amp;quot;八&amp;quot;, &amp;quot;九&amp;quot;}; // 0直接返回 if (num == 0) { return digits_map[0]; } std::string ret; // 检测连续的0 bool zero_flag = false; int i = 0; while (num) { int digit = num % 10; if (digit) { ret = units_map[i] + ret; ret = digits_map[digit] + ret; zero_flag = false; } else { if (i % 4 == 0) { ret = units_map[i] + ret; } else if (!</description>
+    </item>
     
     <item>
       <title>主流数据库对比及应用场景举例</title>

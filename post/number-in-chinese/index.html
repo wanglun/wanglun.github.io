@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title> 数字的中文读法 &middot; wanglun </title>
+  
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta name="generator" content="Hugo 0.55.4" />
+
+
+<link rel="stylesheet" href="https://blog.wanglun.org/css/vec.css">
+
+
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+<link rel="shortcut icon" href="/favicon.ico">
+
+
+<link href="" rel="alternate" type="application/rss+xml" title="wanglun" />
+
+</head>
+
+<body>
+  <header>
+  <nav>
+    <ul>
+      
+      
+      <li class="pull-left ">
+        <a href="https://blog.wanglun.org/">/home/wanglun</a>
+      </li>
+      
+      
+      <li class="pull-left current">
+        <a href="/post">~/post</a>
+      </li>
+      
+  
+      <li class="pull-right"><a href=""><i class="fas fa-rss"></i></a></li>
+    </ul>
+  </nav>
+</header>
+  <div class="content toc">
+    <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#题目">题目</a></li>
+<li><a href="#动手实现">动手实现</a></li>
+</ul></li>
+</ul>
+</nav>
+    
+    <section class="post">
+      <h1 class="post-title"><a href="https://blog.wanglun.org/post/number-in-chinese/">数字的中文读法</a></h1>
+      <span class="post-date">Jun 9, 2019 </span>
+      <div class="post-content markdown-body">
+        
+
+<h2 id="题目">题目</h2>
+
+<p>本次的编码练习题是“数字的中文读法”，需要完成数字与其中文读法之间的相互转换，例如：</p>
+
+<ul>
+<li>123 -&gt; 一百二十三</li>
+<li>200 -&gt; 二百</li>
+<li>201 -&gt; 二百零一</li>
+<li>2001 -&gt; 二千零一</li>
+<li>200000 -&gt; 二十万</li>
+<li>210000 -&gt; 二十一万</li>
+<li>210500 -&gt; 二十一万零五百</li>
+<li>123410500 -&gt; 一亿二千三百四十一万零五百</li>
+<li>2023400500 -&gt; 二十亿二千三百四十万零五百</li>
+<li>1002023400500 -&gt; 一万零二十亿二千三百四十万零五百</li>
+</ul>
+
+<h2 id="动手实现">动手实现</h2>
+
+<p>重点是分析中文读法的规律，尽量多写一些测试用例，以覆盖到不同的情况。示例代码如下：</p>
+
+<pre><code class="language-c++">#include &lt;string&gt;
+#include &lt;unordered_map&gt;
+#include &lt;cassert&gt;
+
+// 可以处理最长13位的数字
+std::string say_number_in_chinese_v1(long num) {
+  // 单位映射
+  static const std::string units_map[] = {&quot;&quot;, &quot;十&quot;, &quot;百&quot;, &quot;千&quot;, &quot;万&quot;, &quot;十&quot;,
+    &quot;百&quot;, &quot;千&quot;, &quot;亿&quot;, &quot;十&quot;, &quot;百&quot;, &quot;千&quot;, &quot;万&quot;};
+  // 数字映射
+  static const std::string digits_map[] = {&quot;零&quot;, &quot;一&quot;, &quot;二&quot;, &quot;三&quot;, &quot;四&quot;, &quot;五&quot;,
+    &quot;六&quot;, &quot;七&quot;, &quot;八&quot;, &quot;九&quot;};
+
+  // 0直接返回
+  if (num == 0) {
+    return digits_map[0];
+  }
+
+  std::string ret;
+  // 检测连续的0
+  bool zero_flag = false;
+  int i = 0;
+  while (num) {
+    int digit = num % 10;
+    if (digit) {
+      ret = units_map[i] + ret;
+      ret = digits_map[digit] + ret;
+      zero_flag = false;
+    } else {
+      if (i % 4 == 0) {
+        ret = units_map[i] + ret;
+      } else if (!zero_flag) {
+        ret = digits_map[0] + ret;
+      }
+      zero_flag = true;
+    }
+
+    ++i;
+    num = num / 10;
+  }
+
+  return ret;
+}
+
+// 四位数字作为一组进行处理
+// 与v1相比，可以处理任意位数的数字
+std::string say_number_in_chinese_v2(long num) {
+  // 单位映射
+  static const std::string units_map[] = {&quot;&quot;, &quot;十&quot;, &quot;百&quot;, &quot;千&quot;};
+  static const int units_count = 4;
+  static const std::string unit_wan = &quot;万&quot;;
+  static const int unit_wan_index = 4;
+  static const std::string unit_yi = &quot;亿&quot;;
+  static const int unit_yi_index = 8;
+  // 数字映射
+  static const std::string digits_map[] = {&quot;零&quot;, &quot;一&quot;, &quot;二&quot;, &quot;三&quot;, &quot;四&quot;, &quot;五&quot;,
+    &quot;六&quot;, &quot;七&quot;, &quot;八&quot;, &quot;九&quot;};
+
+  // 0直接返回
+  if (num == 0) {
+    return digits_map[0];
+  }
+
+  std::string ret;
+  // 检测连续的0
+  bool zero_flag = false;
+  int i = 0;
+  while (num) {
+    int digit = num % 10;
+    // 处理单位
+    if (i &amp;&amp; i % unit_yi_index == 0) {
+      ret = unit_yi + ret;
+    } else if (i &amp;&amp; i % unit_wan_index == 0) {
+      ret = unit_wan + ret;
+    } else if (digit) {
+      ret = units_map[i % units_count] + ret;
+    }
+    // 处理数字
+    if (digit) {
+      ret = digits_map[digit] + ret;
+      zero_flag = false;
+    } else if (!zero_flag) {
+      if (i % units_count != 0) {
+        ret = digits_map[0] + ret;
+      }
+      zero_flag = true;
+    }
+
+    ++i;
+    num = num / 10;
+  }
+
+  return ret;
+}
+
+// return -1 when error happends
+long translate_number_in_chinese(const std::string&amp; num) {
+  static const std::unordered_map&lt;std::string, int&gt; units_map{
+    {&quot;十&quot;, 10},
+    {&quot;百&quot;, 100},
+    {&quot;千&quot;, 1000},
+    {&quot;万&quot;, 10000},
+    {&quot;亿&quot;, 100000000}
+  };
+  static const std::unordered_map&lt;std::string, int&gt; digits_map{
+    {&quot;零&quot;, 0},
+    {&quot;一&quot;, 1},
+    {&quot;二&quot;, 2},
+    {&quot;三&quot;, 3},
+    {&quot;四&quot;, 4},
+    {&quot;五&quot;, 5},
+    {&quot;六&quot;, 6},
+    {&quot;七&quot;, 7},
+    {&quot;八&quot;, 8},
+    {&quot;九&quot;, 9}
+  };
+  // 相关汉字在utf8中都是占3个字节
+  int size_per_word = 3;
+
+  if (num.size() == 0 || num.size() % size_per_word != 0) {
+    return -1;
+  }
+
+  long ret = 0;
+  int sub_num = 0; // 每四位作为一个分组，对应的数字
+  int digit = 0;
+  for (int i = 0; i &lt; num.size(); i += size_per_word) {
+    std::string word = num.substr(i, size_per_word);
+    auto unit_it = units_map.find(word);
+    if (unit_it != units_map.end()) {
+      if (unit_it-&gt;first == &quot;万&quot;) {
+        sub_num += digit;
+        ret += sub_num * unit_it-&gt;second;
+        sub_num = 0;
+        digit = 0;
+      } else if (unit_it-&gt;first == &quot;亿&quot;) {
+        ret += sub_num + digit;
+        ret *= unit_it-&gt;second;
+        sub_num = 0;
+        digit = 0;
+      } else {
+        sub_num += digit * unit_it-&gt;second;
+        digit = 0;
+      }
+    } else {
+      auto digit_it = digits_map.find(word);
+      if (digit_it == digits_map.end()) {
+        return -1;
+      }
+      digit = digit_it-&gt;second;
+    }
+  }
+  ret += sub_num + digit;
+
+  return ret;
+}
+
+int main() {
+  std::unordered_map&lt;long, std::string&gt; cases{
+    {123, &quot;一百二十三&quot;},
+    {200, &quot;二百&quot;},
+    {201, &quot;二百零一&quot;},
+    {2001, &quot;二千零一&quot;},
+    {200000, &quot;二十万&quot;},
+    {210000, &quot;二十一万&quot;},
+    {210500, &quot;二十一万零五百&quot;},
+    {123410500, &quot;一亿二千三百四十一万零五百&quot;},
+    {2023400500, &quot;二十亿二千三百四十万零五百&quot;},
+    {1002023400500, &quot;一万零二十亿二千三百四十万零五百&quot;}
+  };
+
+  for (auto i : cases) {
+    assert(say_number_in_chinese_v1(i.first) == i.second);
+    assert(say_number_in_chinese_v2(i.first) == i.second);
+  }
+
+  for (auto i : cases) {
+    assert(translate_number_in_chinese(i.second) == i.first);
+  }
+}
+</code></pre>
+
+      </div>
+    </section>
+    
+    <section class="pagination clearfix">
+      
+      <a class="btn previous " href="https://blog.wanglun.org/post/database-comparison/"> 主流数据库对比及应用场景举例 </a> 
+       
+      
+    </section>
+    
+    
+  </div>
+  
+  <footer>
+  <div class="footer-info">
+    <p>
+      <a href="mailto:me@wanglun.org?subject="><i class="far fa-envelope"></i> me@wanglun.org </a>
+      {
+        <a href="https://gohugo.io/" title="Hugo :: A fast and modern static website engine">Hugo 0.55.4</a>,
+        <a href="https://github.com/IvanChou/yii.im" title="vec">Vec</a> 
+      }
+      {<a href="http://creativecommons.org/licenses/by-nc-nd/3.0/" title="CC BY-NC-ND 3.0">CC BY-NC-ND 3.0</a>}
+    </p>
+  </div>
+</footer>
+  
+  <script src="https://blog.wanglun.org/js/highlight.min.js"></script>
+  <script>
+    hljs.initHighlightingOnLoad();
+  </script>
+  
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-30344688-1', 'auto');
+ga('send', 'pageview');
+
+</script>
+
+
+</body>
+
+</html>
