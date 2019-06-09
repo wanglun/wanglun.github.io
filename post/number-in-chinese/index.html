@@ -173,6 +173,7 @@ std::string say_number_in_chinese_v2(long num) {
   return ret;
 }
 
+// 将中文读法转换回数字
 // return -1 when error happends
 long translate_number_in_chinese(const std::string&amp; num) {
   static const std::unordered_map&lt;std::string, int&gt; units_map{
