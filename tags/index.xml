@@ -6,10 +6,37 @@
     <description>Recent content in Tags on wanglun</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Sun, 09 Jun 2019 17:40:00 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 13 Jun 2019 19:40:00 +0800</lastBuildDate>
     
 	<atom:link href="https://blog.wanglun.org/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>distributed-system</title>
+      <link>https://blog.wanglun.org/tags/distributed-system/</link>
+      <pubDate>Thu, 13 Jun 2019 19:40:00 +0800</pubDate>
+      
+      <guid>https://blog.wanglun.org/tags/distributed-system/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>rate-limiting</title>
+      <link>https://blog.wanglun.org/tags/rate-limiting/</link>
+      <pubDate>Thu, 13 Jun 2019 19:40:00 +0800</pubDate>
+      
+      <guid>https://blog.wanglun.org/tags/rate-limiting/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>redis</title>
+      <link>https://blog.wanglun.org/tags/redis/</link>
+      <pubDate>Thu, 13 Jun 2019 19:40:00 +0800</pubDate>
+      
+      <guid>https://blog.wanglun.org/tags/redis/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>c&#43;&#43;</title>

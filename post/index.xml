@@ -6,10 +6,25 @@
     <description>Recent content in Posts on wanglun</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Sun, 09 Jun 2019 17:40:00 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 13 Jun 2019 19:40:00 +0800</lastBuildDate>
     
 	<atom:link href="https://blog.wanglun.org/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>大规模检索系统的分布式限流</title>
+      <link>https://blog.wanglun.org/post/distributed-request-rate-limiting/</link>
+      <pubDate>Thu, 13 Jun 2019 19:40:00 +0800</pubDate>
+      
+      <guid>https://blog.wanglun.org/post/distributed-request-rate-limiting/</guid>
+      <description> 背景 某检索服务A（近三千台实例）下游挂接数百个第三方服务，这些第三方服务均有按QPS限制接收流量的需求，用Q代表目标限流值，N代表服务A的实例数
+问题 最初使用单机计数限流，每个实例设置的计数值C=Q/N，存在以下问题：
+ 精度不够，C最小为1，当Q/N小于1时，也只能设置为1，导致流量超发； A的不同实例间流量分布不均匀时，限流不准确。例如，当跨机房切流量时，导致流量少发； A的可用实例数变更过程中，流量发送不准确。例如，批量重启更新时，导致流量少发；  解决 需要由单机计数限流，改进为分布式限流
+ 业内常用限流算法，包括计数法、漏桶法、令牌桶法，这些算法均需要实时统计当前T时刻的可发送流量数据，在大流量、低延迟的分布式检索场景下，很难实现； 结合业务特点并统计分析，发现全局可发送流量变化比较平滑，可以认为在M较小时，相邻的T-M时刻流量构成与T时刻差别不大，从而可以用T-M时刻的全局可发送流量F&amp;rsquo;近似代表T时刻的全局流量F。在T时刻时，每台实例均按照Q/F&amp;rsquo;的概率进行发送，就可以实现全局限流为Q的目标；  工程实现 使用Redis集群完成分布式可发送流量计数，具体如下：
+ 每个服务实例以M分钟（例如1分钟）为周期，累计可发送流量数f； 每个服务实例开启一个异步线程，每隔M分钟向Redis集群上报可发送流量数f，由Redis累加得到全局可发送流量F。上报完成后，该异步线程从Redis拉取M分钟前的可发送流量F&amp;rsquo;； 每个服务实例在处理单个可发送流量时，按Q/F&amp;rsquo;的概率决定是否发送，从而实现全局限流为Q的目标； 在Redis集群不可用时，降级为使用单机限流控制；  折中 T-M与T时刻的间隔周期M的设置，对性能及流量发送稳定性均有影响：
+ M越小，越能及时反映流量的波动情况（例如流量尖峰），从而提升T时刻限流的准确性。但M越小，Redis访问量越大，需要更多机器资源； 反之，M越大，Redis压力下降，但限流准确性也会降低； 结合线上实验，将M设置为2分钟，既满足了限流准确性要求，又将机器资源消耗降到最低；  收益 单机限流存在的问题均能解决：
+ 限流最小精度，由N提升至1； 流量或服务实例变更时，均能自适应地调节发送概率，从而保证整体发送量稳定在Q附近；  </description>
+    </item>
     
     <item>
       <title>数字的中文读法</title>

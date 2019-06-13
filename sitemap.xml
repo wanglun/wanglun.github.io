@@ -4,20 +4,55 @@
   
   <url>
     <loc>https://blog.wanglun.org/categories/</loc>
-    <lastmod>2019-06-09T17:40:00+08:00</lastmod>
+    <lastmod>2019-06-13T19:40:00+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://blog.wanglun.org/post/</loc>
-    <lastmod>2019-06-09T17:40:00+08:00</lastmod>
+    <lastmod>2019-06-13T19:40:00+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://blog.wanglun.org/tags/</loc>
-    <lastmod>2019-06-09T17:40:00+08:00</lastmod>
+    <lastmod>2019-06-13T19:40:00+08:00</lastmod>
     <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.wanglun.org/categories/devnotes/</loc>
+    <lastmod>2019-06-13T19:40:00+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.wanglun.org/tags/distributed-system/</loc>
+    <lastmod>2019-06-13T19:40:00+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.wanglun.org/tags/rate-limiting/</loc>
+    <lastmod>2019-06-13T19:40:00+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.wanglun.org/tags/redis/</loc>
+    <lastmod>2019-06-13T19:40:00+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.wanglun.org/</loc>
+    <lastmod>2019-06-13T19:40:00+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.wanglun.org/post/distributed-request-rate-limiting/</loc>
+    <lastmod>2019-06-13T19:40:00+08:00</lastmod>
   </url>
   
   <url>
@@ -34,12 +69,6 @@
   
   <url>
     <loc>https://blog.wanglun.org/tags/programming/</loc>
-    <lastmod>2019-06-09T17:40:00+08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.wanglun.org/</loc>
     <lastmod>2019-06-09T17:40:00+08:00</lastmod>
     <priority>0</priority>
   </url>
@@ -63,12 +92,6 @@
   
   <url>
     <loc>https://blog.wanglun.org/tags/database/</loc>
-    <lastmod>2019-04-29T19:00:00+08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.wanglun.org/categories/devnotes/</loc>
     <lastmod>2019-04-29T19:00:00+08:00</lastmod>
     <priority>0</priority>
   </url>
