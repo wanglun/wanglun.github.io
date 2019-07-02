@@ -164,19 +164,12 @@ int findBreakDuration(int n, int k, int t, vector&lt;int&gt; start,
 
   // sliding window with size k+1
   int cur_len = 0;
-  int max_len = 0;
-  int win_size = k + 1;
-  for (int i = 0; i &lt; slots.size(); ++i) {
-    if (i == 0) {
-      for (int j = 0; j &lt; win_size &amp;&amp; j &lt; slots.size(); ++j) {
-        cur_len += slots[j];
-      }
-    } else {
-      cur_len -= slots[i - 1];
-      if (i + k &lt; slots.size()) {
-        cur_len += slots[i + k];
-      }
-    }
+  for (int i = 0; i &lt; k + 1 &amp;&amp; i &lt; slots.size(); ++i) {
+    cur_len += slots[i];
+  }
+  int max_len = cur_len;
+  for (int i = 1; i + k &lt; slots.size(); ++i) {
+    cur_len = cur_len - slots[i - 1] + slots[i + k];
     max_len = max(max_len, cur_len);
   }
 
