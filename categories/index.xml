@@ -6,10 +6,19 @@
     <description>Recent content in Categories on wanglun</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Thu, 13 Jun 2019 19:40:00 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 02 Jul 2019 13:40:00 +0800</lastBuildDate>
     
 	<atom:link href="https://blog.wanglun.org/categories/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>coding</title>
+      <link>https://blog.wanglun.org/categories/coding/</link>
+      <pubDate>Tue, 02 Jul 2019 13:40:00 +0800</pubDate>
+      
+      <guid>https://blog.wanglun.org/categories/coding/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>devnotes</title>
@@ -17,15 +26,6 @@
       <pubDate>Thu, 13 Jun 2019 19:40:00 +0800</pubDate>
       
       <guid>https://blog.wanglun.org/categories/devnotes/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>coding</title>
-      <link>https://blog.wanglun.org/categories/coding/</link>
-      <pubDate>Sun, 09 Jun 2019 17:40:00 +0800</pubDate>
-      
-      <guid>https://blog.wanglun.org/categories/coding/</guid>
       <description></description>
     </item>
     
