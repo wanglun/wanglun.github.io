@@ -19,7 +19,7 @@
       <guid>https://blog.wanglun.org/post/rearrange-meetings-longest-break-duration/</guid>
       <description>题目 本次的编码练习题是“最长会议间隔时间”，参考自https://stackoverflow.com/questions/52135344
 题目简述如下：
-有一场会议，从0点开始，t点结束。 安排n个演讲者进行演讲，每个演讲者开始时间用数组start表示（共n个元素）， 结束时间用finish数组表示（共n个元素），演讲者的演讲顺利不能变。 现在可以调整最多k个演讲者的演讲时间，找出经过调整后，可以得到的最长会议间隔时间。 case 0 input: n=3 k=2 t=15 start=[0, 6, 7] finish=[5, 7, 8] output: 8 case 1 input: n=1 k=0 t=1000000000 start=[607641287] finish=[607641288] output: 607641287 case 2 input: n=4 k=2 t=15 start=[4, 6, 7, 10] finish=[5, 7, 8, 11] output: 6  动手实现 这道题目可以使用滑动窗口来实现，步骤如下：
+有一场会议，从0点开始，t点结束。 安排n个演讲者进行演讲，每个演讲者开始时间用数组start表示（共n个元素）， 结束时间用finish数组表示（共n个元素），演讲者的演讲顺序不能变。 现在可以调整最多k个演讲者的演讲时间，找出经过调整后，可以得到的最长会议间隔时间。 case 0 input: n=3 k=2 t=15 start=[0, 6, 7] finish=[5, 7, 8] output: 8 case 1 input: n=1 k=0 t=1000000000 start=[607641287] finish=[607641288] output: 607641287 case 2 input: n=4 k=2 t=15 start=[4, 6, 7, 10] finish=[5, 7, 8, 11] output: 6  动手实现 这道题目可以使用滑动窗口来实现，步骤如下：
  找到所有会议间的间隔时长数组slots，对于连续的会议，则间隔时长为0 对于给定的k，使用大小为k+1的窗口，在上述slots数组中滑动，并计算窗口内间隔时长之和 上述窗口中，间隔时长之和最大值，即为最长会议间隔 调整方法是，将窗口中的k个会议连接在一起，并安排在窗口的一侧即可  以case 0举例如下：
  slots = [0, 1, 0, 7] k=2, 则滑动窗口大小为3，得到两个窗口，分别为[0, 1, 0]和[1, 0, 7] 第二个窗口的和最大，即最大会议间隔为8  /* You are organizing an event where there will be a number of presenters.</description>
     </item>
