@@ -6,10 +6,21 @@
     <description>Recent content in Posts on wanglun</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Tue, 02 Jul 2019 13:40:00 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 09 Jul 2019 23:00:00 +0800</lastBuildDate>
     
 	<atom:link href="https://blog.wanglun.org/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>使用浏览器扩展Print Edit WE优化网页打印效果</title>
+      <link>https://blog.wanglun.org/post/print-edit-we/</link>
+      <pubDate>Tue, 09 Jul 2019 23:00:00 +0800</pubDate>
+      
+      <guid>https://blog.wanglun.org/post/print-edit-we/</guid>
+      <description> 背景 平时阅读到优秀的技术文章，习惯使用Chrome的打印功能将网页归档为PDF文件，有三个目的：
+ 将好文章归档保存，防止链接失效 方便在iPad上阅读 方便做批注  但多数网站对Print Stylesheet的支持都不够好，导致打印效果非常一般。 本文推荐一款好用的Chrome扩展Print Edit WE，可以很方便地优化打印效果，如下图所示：
+使用方法 1. 原始网页 2. 删除选中区域 3. 只保留选中区域 4. 调整选中区域样式 5. 最终效果 </description>
+    </item>
     
     <item>
       <title>最长会议间隔时间</title>
