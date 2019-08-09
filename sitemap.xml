@@ -3,140 +3,140 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://wanglun.org/categories/</loc>
+    <loc>wanglun.org/categories/</loc>
     <lastmod>2019-07-09T23:00:00+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://wanglun.org/post/</loc>
+    <loc>wanglun.org/post/</loc>
     <lastmod>2019-07-09T23:00:00+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://wanglun.org/tags/</loc>
+    <loc>wanglun.org/tags/</loc>
     <lastmod>2019-07-09T23:00:00+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://wanglun.org/categories/devnotes/</loc>
+    <loc>wanglun.org/categories/devnotes/</loc>
     <lastmod>2019-07-09T23:00:00+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://wanglun.org/tags/tools/</loc>
+    <loc>wanglun.org/tags/tools/</loc>
     <lastmod>2019-07-09T23:00:00+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://wanglun.org/</loc>
+    <loc>wanglun.org/</loc>
     <lastmod>2019-07-09T23:00:00+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://wanglun.org/post/print-edit-we/</loc>
+    <loc>wanglun.org/post/print-edit-we/</loc>
     <lastmod>2019-07-09T23:00:00+08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://wanglun.org/tags/c&#43;&#43;/</loc>
+    <loc>wanglun.org/tags/c&#43;&#43;/</loc>
     <lastmod>2019-07-02T13:40:00+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://wanglun.org/categories/coding/</loc>
+    <loc>wanglun.org/categories/coding/</loc>
     <lastmod>2019-07-02T13:40:00+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://wanglun.org/tags/programming/</loc>
+    <loc>wanglun.org/tags/programming/</loc>
     <lastmod>2019-07-02T13:40:00+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://wanglun.org/post/rearrange-meetings-longest-break-duration/</loc>
+    <loc>wanglun.org/post/rearrange-meetings-longest-break-duration/</loc>
     <lastmod>2019-07-02T13:40:00+08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://wanglun.org/tags/distributed-system/</loc>
+    <loc>wanglun.org/tags/distributed-system/</loc>
     <lastmod>2019-06-13T19:40:00+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://wanglun.org/tags/rate-limiting/</loc>
+    <loc>wanglun.org/tags/rate-limiting/</loc>
     <lastmod>2019-06-13T19:40:00+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://wanglun.org/tags/redis/</loc>
+    <loc>wanglun.org/tags/redis/</loc>
     <lastmod>2019-06-13T19:40:00+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://wanglun.org/post/distributed-request-rate-limiting/</loc>
+    <loc>wanglun.org/post/distributed-request-rate-limiting/</loc>
     <lastmod>2019-06-13T19:40:00+08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://wanglun.org/post/number-in-chinese/</loc>
+    <loc>wanglun.org/post/number-in-chinese/</loc>
     <lastmod>2019-06-09T17:40:00+08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://wanglun.org/tags/nosql/</loc>
+    <loc>wanglun.org/tags/nosql/</loc>
     <lastmod>2019-04-29T19:00:00+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://wanglun.org/tags/sql/</loc>
+    <loc>wanglun.org/tags/sql/</loc>
     <lastmod>2019-04-29T19:00:00+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://wanglun.org/tags/database/</loc>
+    <loc>wanglun.org/tags/database/</loc>
     <lastmod>2019-04-29T19:00:00+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://wanglun.org/post/database-comparison/</loc>
+    <loc>wanglun.org/post/database-comparison/</loc>
     <lastmod>2019-04-29T19:00:00+08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://wanglun.org/tags/minilib/</loc>
+    <loc>wanglun.org/tags/minilib/</loc>
     <lastmod>2019-04-27T16:00:33+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://wanglun.org/tags/pthread/</loc>
+    <loc>wanglun.org/tags/pthread/</loc>
     <lastmod>2019-04-27T16:00:33+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://wanglun.org/tags/queue/</loc>
+    <loc>wanglun.org/tags/queue/</loc>
     <lastmod>2019-04-27T16:00:33+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://wanglun.org/post/minilib-blocking-queue/</loc>
+    <loc>wanglun.org/post/minilib-blocking-queue/</loc>
     <lastmod>2019-04-27T16:00:33+08:00</lastmod>
   </url>
   
