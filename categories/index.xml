@@ -2,30 +2,30 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Categories on wanglun</title>
-    <link>https://blog.wanglun.org/categories/</link>
+    <link>https://wanglun.org/categories/</link>
     <description>Recent content in Categories on wanglun</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <lastBuildDate>Tue, 09 Jul 2019 23:00:00 +0800</lastBuildDate>
     
-	<atom:link href="https://blog.wanglun.org/categories/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://wanglun.org/categories/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>devnotes</title>
-      <link>https://blog.wanglun.org/categories/devnotes/</link>
+      <link>https://wanglun.org/categories/devnotes/</link>
       <pubDate>Tue, 09 Jul 2019 23:00:00 +0800</pubDate>
       
-      <guid>https://blog.wanglun.org/categories/devnotes/</guid>
+      <guid>https://wanglun.org/categories/devnotes/</guid>
       <description></description>
     </item>
     
     <item>
       <title>coding</title>
-      <link>https://blog.wanglun.org/categories/coding/</link>
+      <link>https://wanglun.org/categories/coding/</link>
       <pubDate>Tue, 02 Jul 2019 13:40:00 +0800</pubDate>
       
-      <guid>https://blog.wanglun.org/categories/coding/</guid>
+      <guid>https://wanglun.org/categories/coding/</guid>
       <description></description>
     </item>
     
