@@ -2,120 +2,120 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on wanglun</title>
-    <link>wanglun.org/tags/</link>
+    <link>/tags/</link>
     <description>Recent content in Tags on wanglun</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <lastBuildDate>Tue, 09 Jul 2019 23:00:00 +0800</lastBuildDate>
     
-	<atom:link href="wanglun.org/tags/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>tools</title>
-      <link>wanglun.org/tags/tools/</link>
+      <link>/tags/tools/</link>
       <pubDate>Tue, 09 Jul 2019 23:00:00 +0800</pubDate>
       
-      <guid>wanglun.org/tags/tools/</guid>
+      <guid>/tags/tools/</guid>
       <description></description>
     </item>
     
     <item>
       <title>c&#43;&#43;</title>
-      <link>wanglun.org/tags/c&#43;&#43;/</link>
+      <link>/tags/c&#43;&#43;/</link>
       <pubDate>Tue, 02 Jul 2019 13:40:00 +0800</pubDate>
       
-      <guid>wanglun.org/tags/c&#43;&#43;/</guid>
+      <guid>/tags/c&#43;&#43;/</guid>
       <description></description>
     </item>
     
     <item>
       <title>programming</title>
-      <link>wanglun.org/tags/programming/</link>
+      <link>/tags/programming/</link>
       <pubDate>Tue, 02 Jul 2019 13:40:00 +0800</pubDate>
       
-      <guid>wanglun.org/tags/programming/</guid>
+      <guid>/tags/programming/</guid>
       <description></description>
     </item>
     
     <item>
       <title>distributed-system</title>
-      <link>wanglun.org/tags/distributed-system/</link>
+      <link>/tags/distributed-system/</link>
       <pubDate>Thu, 13 Jun 2019 19:40:00 +0800</pubDate>
       
-      <guid>wanglun.org/tags/distributed-system/</guid>
+      <guid>/tags/distributed-system/</guid>
       <description></description>
     </item>
     
     <item>
       <title>rate-limiting</title>
-      <link>wanglun.org/tags/rate-limiting/</link>
+      <link>/tags/rate-limiting/</link>
       <pubDate>Thu, 13 Jun 2019 19:40:00 +0800</pubDate>
       
-      <guid>wanglun.org/tags/rate-limiting/</guid>
+      <guid>/tags/rate-limiting/</guid>
       <description></description>
     </item>
     
     <item>
       <title>redis</title>
-      <link>wanglun.org/tags/redis/</link>
+      <link>/tags/redis/</link>
       <pubDate>Thu, 13 Jun 2019 19:40:00 +0800</pubDate>
       
-      <guid>wanglun.org/tags/redis/</guid>
+      <guid>/tags/redis/</guid>
       <description></description>
     </item>
     
     <item>
       <title>NoSQL</title>
-      <link>wanglun.org/tags/nosql/</link>
+      <link>/tags/nosql/</link>
       <pubDate>Mon, 29 Apr 2019 19:00:00 +0800</pubDate>
       
-      <guid>wanglun.org/tags/nosql/</guid>
+      <guid>/tags/nosql/</guid>
       <description></description>
     </item>
     
     <item>
       <title>SQL</title>
-      <link>wanglun.org/tags/sql/</link>
+      <link>/tags/sql/</link>
       <pubDate>Mon, 29 Apr 2019 19:00:00 +0800</pubDate>
       
-      <guid>wanglun.org/tags/sql/</guid>
+      <guid>/tags/sql/</guid>
       <description></description>
     </item>
     
     <item>
       <title>database</title>
-      <link>wanglun.org/tags/database/</link>
+      <link>/tags/database/</link>
       <pubDate>Mon, 29 Apr 2019 19:00:00 +0800</pubDate>
       
-      <guid>wanglun.org/tags/database/</guid>
+      <guid>/tags/database/</guid>
       <description></description>
     </item>
     
     <item>
       <title>minilib</title>
-      <link>wanglun.org/tags/minilib/</link>
+      <link>/tags/minilib/</link>
       <pubDate>Sat, 27 Apr 2019 16:00:33 +0800</pubDate>
       
-      <guid>wanglun.org/tags/minilib/</guid>
+      <guid>/tags/minilib/</guid>
       <description></description>
     </item>
     
     <item>
       <title>pthread</title>
-      <link>wanglun.org/tags/pthread/</link>
+      <link>/tags/pthread/</link>
       <pubDate>Sat, 27 Apr 2019 16:00:33 +0800</pubDate>
       
-      <guid>wanglun.org/tags/pthread/</guid>
+      <guid>/tags/pthread/</guid>
       <description></description>
     </item>
     
     <item>
       <title>queue</title>
-      <link>wanglun.org/tags/queue/</link>
+      <link>/tags/queue/</link>
       <pubDate>Sat, 27 Apr 2019 16:00:33 +0800</pubDate>
       
-      <guid>wanglun.org/tags/queue/</guid>
+      <guid>/tags/queue/</guid>
       <description></description>
     </item>
     

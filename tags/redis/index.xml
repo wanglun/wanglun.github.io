@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>redis on wanglun</title>
-    <link>wanglun.org/tags/redis/</link>
+    <link>/tags/redis/</link>
     <description>Recent content in redis on wanglun</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <lastBuildDate>Thu, 13 Jun 2019 19:40:00 +0800</lastBuildDate>
     
-	<atom:link href="wanglun.org/tags/redis/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/tags/redis/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>大规模检索系统的分布式限流</title>
-      <link>wanglun.org/post/distributed-request-rate-limiting/</link>
+      <link>/post/distributed-request-rate-limiting/</link>
       <pubDate>Thu, 13 Jun 2019 19:40:00 +0800</pubDate>
       
-      <guid>wanglun.org/post/distributed-request-rate-limiting/</guid>
+      <guid>/post/distributed-request-rate-limiting/</guid>
       <description> 背景 某检索服务A（近三千台实例）下游挂接数百个第三方服务，这些第三方服务均有按QPS限制接收流量的需求，用Q代表目标限流值，N代表服务A的实例数
 问题 最初使用单机计数限流，每个实例设置的计数值C=Q/N，存在以下问题：
  精度不够，C最小为1，当Q/N小于1时，也只能设置为1，导致流量超发； A的不同实例间流量分布不均匀时，限流不准确。例如，当跨机房切流量时，导致流量少发； A的可用实例数变更过程中，流量发送不准确。例如，批量重启更新时，导致流量少发；  解决 需要由单机计数限流，改进为分布式限流
