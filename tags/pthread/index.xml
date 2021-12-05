@@ -1,25 +1,2 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>pthread on wanglun</title>
-    <link>/tags/pthread/</link>
-    <description>Recent content in pthread on wanglun</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>zh-cn</language>
-    <lastBuildDate>Sat, 27 Apr 2019 16:00:33 +0800</lastBuildDate>
-    
-	<atom:link href="/tags/pthread/index.xml" rel="self" type="application/rss+xml" />
-    
-    
-    <item>
-      <title>阻塞队列(Blocking Queue)</title>
-      <link>/post/minilib-blocking-queue/</link>
-      <pubDate>Sat, 27 Apr 2019 16:00:33 +0800</pubDate>
-      
-      <guid>/post/minilib-blocking-queue/</guid>
-      <description>简介  Blocking Queue是基于管程(Monitors)实现的一种多线程编程中常用的数据结构 Blocking Queue可以方便地实现线程间的资源分发，用于任务队列、生产者-消费者问题。  应用场景  任务队列 生产者-消费者问题  动手实现 在minilib中，使用queue作为基础队列，使用mutex和condition_variable进行线程同步，实现的固定容量的阻塞队列如下：
-#ifndef MINILIB_BLOCKING_QUEUE_H #define MINILIB_BLOCKING_QUEUE_H #include &amp;lt;condition_variable&amp;gt; #include &amp;lt;mutex&amp;gt; #include &amp;lt;queue&amp;gt; namespace minilib { // blocking_queue是一个固定大小的阻塞队列， // push时，如果已满，则使用条件变量阻塞等待 // pop时，如果已空，则使用条件变量阻塞等待 template &amp;lt;typename T&amp;gt; class blocking_queue { public: typedef T type; explicit blocking_queue(size_t size) : size_(size) {} ~blocking_queue() {} void pop(type&amp;amp; v) { // 需要使用unique_lock，因为在wait时先会原子的unlock，若满足条件则重新lock std::unique_lock&amp;lt;std::mutex&amp;gt; lk(cv_m_); while (queue_.empty()) { cv_.wait(lk); } v = std::move(queue_.front()); queue_.pop(); cv_.notify_one(); } void push(const type&amp;amp; v) { std::unique_lock&amp;lt;std::mutex&amp;gt; lk(cv_m_); while (queue_.</description>
-    </item>
-    
-  </channel>
-</rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>pthread on wanglun</title><link>https://wanglun.org/tags/pthread/</link><description>Recent content in pthread on wanglun</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Sat, 27 Apr 2019 16:00:33 +0800</lastBuildDate><atom:link href="https://wanglun.org/tags/pthread/index.xml" rel="self" type="application/rss+xml"/><item><title>阻塞队列(Blocking Queue)</title><link>https://wanglun.org/post/minilib-blocking-queue/</link><pubDate>Sat, 27 Apr 2019 16:00:33 +0800</pubDate><guid>https://wanglun.org/post/minilib-blocking-queue/</guid><description>简介 Blocking Queue是基于管程(Monitors)实现的一种多线程编程中常用的数据结构 Blocking Queue可以方便地实现线程间的资源分发，用于任务队列、生产者-消费者问题。 应用场景 任务队列 生产者-消费者问题 动手实现 在minilib中，使用queue作为基础队列，使用mutex和condition_variable进行线程同步，实现的固定容量的阻塞队列如下：
+#ifndef MINILIB_BLOCKING_QUEUE_H #define MINILIB_BLOCKING_QUEUE_H #include &amp;lt;condition_variable&amp;gt;#include &amp;lt;mutex&amp;gt;#include &amp;lt;queue&amp;gt; namespace minilib { // blocking_queue是一个固定大小的阻塞队列， // push时，如果已满，则使用条件变量阻塞等待 // pop时，如果已空，则使用条件变量阻塞等待 template &amp;lt;typename T&amp;gt; class blocking_queue { public: typedef T type; explicit blocking_queue(size_t size) : size_(size) {} ~blocking_queue() {} void pop(type&amp;amp; v) { // 需要使用unique_lock，因为在wait时先会原子的unlock，若满足条件则重新lock std::unique_lock&amp;lt;std::mutex&amp;gt; lk(cv_m_); while (queue_.empty()) { cv_.wait(lk); } v = std::move(queue_.front()); queue_.pop(); cv_.notify_one(); } void push(const type&amp;amp; v) { std::unique_lock&amp;lt;std::mutex&amp;gt; lk(cv_m_); while (queue_.</description></item></channel></rss>

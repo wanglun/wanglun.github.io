@@ -1,87 +1,16 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Posts on wanglun</title>
-    <link>/post/</link>
-    <description>Recent content in Posts on wanglun</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>zh-cn</language>
-    <lastBuildDate>Tue, 09 Jul 2019 23:00:00 +0800</lastBuildDate>
-    
-	<atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
-    
-    
-    <item>
-      <title>使用浏览器扩展Print Edit WE优化网页打印效果</title>
-      <link>/post/print-edit-we/</link>
-      <pubDate>Tue, 09 Jul 2019 23:00:00 +0800</pubDate>
-      
-      <guid>/post/print-edit-we/</guid>
-      <description> 背景 平时阅读到优秀的技术文章，习惯使用Chrome的打印功能将网页归档为PDF文件，有三个目的：
- 将好文章归档保存，防止链接失效 方便在iPad上阅读 方便做批注  但多数网站对Print Stylesheet的支持都不够好，导致打印效果非常一般。 本文推荐一款好用的Chrome扩展Print Edit WE，可以很方便地优化打印效果，如下图所示：
-使用方法 1. 原始网页 2. 删除选中区域 3. 只保留选中区域 4. 调整选中区域样式 5. 最终效果 改进建议 Print Edit WE已经很好用了，但有如下可以改进的地方：
- 另存为的PDF文件中，无法像普通PDF文件一样，对文字进行选中、飘黄等操作，这应该是Chrome本身的问题 调整选中区域样式时，控件操作不太方便，比如不能直接设置margin属性为一个指定值 是否可以预置一些效果比较好的Print Stylesheet?  参考资料  https://chrome.google.com/webstore/detail/print-edit-we/olnblpmehglpcallpnbgmikjblmkopia https://www.smashingmagazine.com/2011/11/how-to-set-up-a-print-style-sheet/ https://www.smashingmagazine.com/2018/05/print-stylesheets-in-2018/ https://superuser.com/questions/846082/how-to-get-wysiwyp-print-what-you-see-in-a-web-browser  </description>
-    </item>
-    
-    <item>
-      <title>最长会议间隔时间</title>
-      <link>/post/rearrange-meetings-longest-break-duration/</link>
-      <pubDate>Tue, 02 Jul 2019 13:40:00 +0800</pubDate>
-      
-      <guid>/post/rearrange-meetings-longest-break-duration/</guid>
-      <description>题目 本次的编码练习题是“最长会议间隔时间”，参考自https://stackoverflow.com/questions/52135344
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on wanglun</title><link>https://wanglun.org/post/</link><description>Recent content in Posts on wanglun</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Tue, 02 Jul 2019 13:40:00 +0800</lastBuildDate><atom:link href="https://wanglun.org/post/index.xml" rel="self" type="application/rss+xml"/><item><title>最长会议间隔时间</title><link>https://wanglun.org/post/rearrange-meetings-longest-break-duration/</link><pubDate>Tue, 02 Jul 2019 13:40:00 +0800</pubDate><guid>https://wanglun.org/post/rearrange-meetings-longest-break-duration/</guid><description>题目 本次的编码练习题是“最长会议间隔时间”，参考自https://stackoverflow.com/questions/52135344
 题目简述如下：
-有一场会议，从0点开始，t点结束。 安排n个演讲者进行演讲，每个演讲者开始时间用数组start表示（共n个元素）， 结束时间用finish数组表示（共n个元素），演讲者的演讲顺序不能变。 现在可以调整最多k个演讲者的演讲时间，找出经过调整后，可以得到的最长会议间隔时间。 case 0 input: n=3 k=2 t=15 start=[0, 6, 7] finish=[5, 7, 8] output: 8 case 1 input: n=1 k=0 t=1000000000 start=[607641287] finish=[607641288] output: 607641287 case 2 input: n=4 k=2 t=15 start=[4, 6, 7, 10] finish=[5, 7, 8, 11] output: 6  动手实现 这道题目可以使用滑动窗口来实现，步骤如下：
- 找到所有会议间的间隔时长数组slots，对于连续的会议，则间隔时长为0 对于给定的k，使用大小为k+1的窗口，在上述slots数组中滑动，并计算窗口内间隔时长之和 上述窗口中，间隔时长之和最大值，即为最长会议间隔 调整方法是，将窗口中的k个会议连接在一起，并安排在窗口的一侧即可  以case 0举例如下：
- slots = [0, 1, 0, 7] k=2, 则滑动窗口大小为3，得到两个窗口，分别为[0, 1, 0]和[1, 0, 7] 第二个窗口的和最大，即最大会议间隔为8  /* You are organizing an event where there will be a number of presenters.</description>
-    </item>
-    
-    <item>
-      <title>大规模检索系统的分布式限流</title>
-      <link>/post/distributed-request-rate-limiting/</link>
-      <pubDate>Thu, 13 Jun 2019 19:40:00 +0800</pubDate>
-      
-      <guid>/post/distributed-request-rate-limiting/</guid>
-      <description> 背景 某检索服务A（近三千台实例）下游挂接数百个第三方服务，这些第三方服务均有按QPS限制接收流量的需求，用Q代表目标限流值，N代表服务A的实例数
+有一场会议，从0点开始，t点结束。 安排n个演讲者进行演讲，每个演讲者开始时间用数组start表示（共n个元素）， 结束时间用finish数组表示（共n个元素），演讲者的演讲顺序不能变。 现在可以调整最多k个演讲者的演讲时间，找出经过调整后，可以得到的最长会议间隔时间。 case 0 input: n=3 k=2 t=15 start=[0, 6, 7] finish=[5, 7, 8] output: 8 case 1 input: n=1 k=0 t=1000000000 start=[607641287] finish=[607641288] output: 607641287 case 2 input: n=4 k=2 t=15 start=[4, 6, 7, 10] finish=[5, 7, 8, 11] output: 6 动手实现 这道题目可以使用滑动窗口来实现，步骤如下：
+找到所有会议间的间隔时长数组slots，对于连续的会议，则间隔时长为0 对于给定的k，使用大小为k+1的窗口，在上述slots数组中滑动，并计算窗口内间隔时长之和 上述窗口中，间隔时长之和最大值，即为最长会议间隔 调整方法是，将窗口中的k个会议连接在一起，并安排在窗口的一侧即可 以case 0举例如下：
+slots = [0, 1, 0, 7] k=2, 则滑动窗口大小为3，得到两个窗口，分别为[0, 1, 0]和[1, 0, 7] 第二个窗口的和最大，即最大会议间隔为8 /* You are organizing an event where there will be a number of presenters.</description></item><item><title>大规模检索系统的分布式限流</title><link>https://wanglun.org/post/distributed-request-rate-limiting/</link><pubDate>Thu, 13 Jun 2019 19:40:00 +0800</pubDate><guid>https://wanglun.org/post/distributed-request-rate-limiting/</guid><description>背景 某检索服务A（近三千台实例）下游挂接数百个第三方服务，这些第三方服务均有按QPS限制接收流量的需求，用Q代表目标限流值，N代表服务A的实例数
 问题 最初使用单机计数限流，每个实例设置的计数值C=Q/N，存在以下问题：
- 精度不够，C最小为1，当Q/N小于1时，也只能设置为1，导致流量超发； A的不同实例间流量分布不均匀时，限流不准确。例如，当跨机房切流量时，导致流量少发； A的可用实例数变更过程中，流量发送不准确。例如，批量重启更新时，导致流量少发；  解决 需要由单机计数限流，改进为分布式限流
- 业内常用限流算法，包括计数法、漏桶法、令牌桶法，这些算法均需要实时统计当前T时刻的可发送流量数据，在大流量、低延迟的分布式检索场景下，很难实现； 结合业务特点并统计分析，发现全局可发送流量变化比较平滑，可以认为在M较小时，相邻的T-M时刻流量构成与T时刻差别不大，从而可以用T-M时刻的全局可发送流量F&amp;rsquo;近似代表T时刻的全局流量F。在T时刻时，每台实例均按照Q/F&amp;rsquo;的概率进行发送，就可以实现全局限流为Q的目标；  工程实现 使用Redis集群完成分布式可发送流量计数，具体如下：
- 每个服务实例以M分钟（例如1分钟）为周期，累计可发送流量数f； 每个服务实例开启一个异步线程，每隔M分钟向Redis集群上报可发送流量数f，由Redis累加得到全局可发送流量F。上报完成后，该异步线程从Redis拉取M分钟前的可发送流量F&amp;rsquo;； 每个服务实例在处理单个可发送流量时，按Q/F&amp;rsquo;的概率决定是否发送，从而实现全局限流为Q的目标； 在Redis集群不可用时，降级为使用单机限流控制；  折中 T-M与T时刻的间隔周期M的设置，对性能及流量发送稳定性均有影响：
- M越小，越能及时反映流量的波动情况（例如流量尖峰），从而提升T时刻限流的准确性。但M越小，Redis访问量越大，需要更多机器资源； 反之，M越大，Redis压力下降，但限流准确性也会降低； 结合线上实验，将M设置为2分钟，既满足了限流准确性要求，又将机器资源消耗降到最低；  收益 单机限流存在的问题均能解决：
- 限流最小精度，由N提升至1； 流量或服务实例变更时，均能自适应地调节发送概率，从而保证整体发送量稳定在Q附近；  </description>
-    </item>
-    
-    <item>
-      <title>数字的中文读法</title>
-      <link>/post/number-in-chinese/</link>
-      <pubDate>Sun, 09 Jun 2019 17:40:00 +0800</pubDate>
-      
-      <guid>/post/number-in-chinese/</guid>
-      <description>题目 本次的编码练习题是“数字的中文读法”，需要完成数字与其中文读法之间的相互转换，例如：
- 123 -&amp;gt; 一百二十三 200 -&amp;gt; 二百 201 -&amp;gt; 二百零一 2001 -&amp;gt; 二千零一 200000 -&amp;gt; 二十万 210000 -&amp;gt; 二十一万 210500 -&amp;gt; 二十一万零五百 123410500 -&amp;gt; 一亿二千三百四十一万零五百 2023400500 -&amp;gt; 二十亿二千三百四十万零五百 1002023400500 -&amp;gt; 一万零二十亿二千三百四十万零五百  动手实现 重点是分析中文读法的规律，尽量多写一些测试用例，以覆盖到不同的情况。示例代码如下：
-#include &amp;lt;string&amp;gt; #include &amp;lt;unordered_map&amp;gt; #include &amp;lt;cassert&amp;gt; // 可以处理最长13位的数字 std::string say_number_in_chinese_v1(long num) { // 单位映射 static const std::string units_map[] = {&amp;quot;&amp;quot;, &amp;quot;十&amp;quot;, &amp;quot;百&amp;quot;, &amp;quot;千&amp;quot;, &amp;quot;万&amp;quot;, &amp;quot;十&amp;quot;, &amp;quot;百&amp;quot;, &amp;quot;千&amp;quot;, &amp;quot;亿&amp;quot;, &amp;quot;十&amp;quot;, &amp;quot;百&amp;quot;, &amp;quot;千&amp;quot;, &amp;quot;万&amp;quot;}; // 数字映射 static const std::string digits_map[] = {&amp;quot;零&amp;quot;, &amp;quot;一&amp;quot;, &amp;quot;二&amp;quot;, &amp;quot;三&amp;quot;, &amp;quot;四&amp;quot;, &amp;quot;五&amp;quot;, &amp;quot;六&amp;quot;, &amp;quot;七&amp;quot;, &amp;quot;八&amp;quot;, &amp;quot;九&amp;quot;}; // 0直接返回 if (num == 0) { return digits_map[0]; } std::string ret; // 检测连续的0 bool zero_flag = false; int i = 0; while (num) { int digit = num % 10; if (digit) { ret = units_map[i] + ret; ret = digits_map[digit] + ret; zero_flag = false; } else { if (i % 4 == 0) { ret = units_map[i] + ret; } else if (!</description>
-    </item>
-    
-    <item>
-      <title>主流数据库对比及应用场景举例</title>
-      <link>/post/database-comparison/</link>
-      <pubDate>Mon, 29 Apr 2019 19:00:00 +0800</pubDate>
-      
-      <guid>/post/database-comparison/</guid>
-      <description>简介 在进行软件系统设计时，数据库选型是必不可少的工作。本文对当前主流的数据库进行简单对比，包括如下数据库：
- MySQL1: 是一个高性能、低成本、可靠性好的开源关系型数据库，MariaDB是它的一个开源分支。 Redis2: 是一个使用ANSI C编写的开源、支持网络、基于内存、可选持久性的KV存储数据库。 ElasticSearch3: 是一个基于Lucene库的搜索引擎，使用Java实现。 MongoDB4: 是一种面向文档的NoSQL数据库，使用C++实现。 HBase5: 是一个开源的NoSQL数据库，它参考了谷歌的BigTable建模，使用Java实现。 SQLite6: 是一个开源的关系型数据库，SQLite不是一个CS结构的数据库引擎，而是被集成在用户程序中，使用C实现。 LevelDB7: 是一个由Google研发的KV嵌入式数据库，使用C++实现。  对比 说明：
- 评价粒度很粗，只适合直观感受。应用时，需要结合场景，具体分析及测试。 评价分五级：好、较好、一般、较差、差。     项目 MySQL Redis ElasticSearch MongoDB HBase SQLite LevelDB     数据规模 较好 差 较好 较好 好 一般 一般   随机读取 较好 好 一般 较好 较好 较好 较差   顺序读取 较好 好 一般 较好 较好 较好 较好   随机写入 一般 好 差 一般 较好 一般 较好   顺序写入 较好 好 差 较好 较好 较好 较好   检索功能 一般 差 好 较好 差 一般 差   关联查询 好 差 较好 一般 差 较好 差   硬件要求 低 低 高 中 中 低 低   事务支持 ACID ACID8 无 ACID9 无 ACID10 无   CS架构 是 是 是 是 是 否 否   主键索引 支持 支持 支持 支持 支持 支持 支持   二级索引 支持 不支持 支持 支持 不支持 支持 不支持    应用场景举例  MySQL  复杂关联查询 对事务、安全性要求高的OLTP(On-Line Transaction Processing)类业务 不适合大文本、图片等二进制存储  Redis  缓存等对读写性能要求高的场景 简单消息队列、计数器等  ElasticSearch  全文检索、搜索引擎 聚合分析、数据可视化  MongoDB  图片等文档小规模存储(使用GridFS可支持大文件) 无复杂关联查询、schema变更频繁的业务  HBase  海量数据 检索及关联查询需要依赖其它服务（例如ElasticSearch）  SQLite  客户端软件嵌入式存储，如Mobile App等 服务端单机少量数据存储，如个人Blog、服务配置信息等  LevelDB  客户端软件存储，如Chrome的IndexDB等 随机写入比较多，随机读取较少的业务   参考资料  https://en.</description>
-    </item>
-    
-    <item>
-      <title>阻塞队列(Blocking Queue)</title>
-      <link>/post/minilib-blocking-queue/</link>
-      <pubDate>Sat, 27 Apr 2019 16:00:33 +0800</pubDate>
-      
-      <guid>/post/minilib-blocking-queue/</guid>
-      <description>简介  Blocking Queue是基于管程(Monitors)实现的一种多线程编程中常用的数据结构 Blocking Queue可以方便地实现线程间的资源分发，用于任务队列、生产者-消费者问题。  应用场景  任务队列 生产者-消费者问题  动手实现 在minilib中，使用queue作为基础队列，使用mutex和condition_variable进行线程同步，实现的固定容量的阻塞队列如下：
-#ifndef MINILIB_BLOCKING_QUEUE_H #define MINILIB_BLOCKING_QUEUE_H #include &amp;lt;condition_variable&amp;gt; #include &amp;lt;mutex&amp;gt; #include &amp;lt;queue&amp;gt; namespace minilib { // blocking_queue是一个固定大小的阻塞队列， // push时，如果已满，则使用条件变量阻塞等待 // pop时，如果已空，则使用条件变量阻塞等待 template &amp;lt;typename T&amp;gt; class blocking_queue { public: typedef T type; explicit blocking_queue(size_t size) : size_(size) {} ~blocking_queue() {} void pop(type&amp;amp; v) { // 需要使用unique_lock，因为在wait时先会原子的unlock，若满足条件则重新lock std::unique_lock&amp;lt;std::mutex&amp;gt; lk(cv_m_); while (queue_.empty()) { cv_.wait(lk); } v = std::move(queue_.front()); queue_.pop(); cv_.notify_one(); } void push(const type&amp;amp; v) { std::unique_lock&amp;lt;std::mutex&amp;gt; lk(cv_m_); while (queue_.</description>
-    </item>
-    
-  </channel>
-</rss>
+精度不够，C最小为1，当Q/N小于1时，也只能设置为1，导致流量超发； A的不同实例间流量分布不均匀时，限流不准确。例如，当跨机房切流量时，导致流量少发； A的可用实例数变更过程中，流量发送不准确。例如，批量重启更新时，导致流量少发； 解决 需要由单机计数限流，改进为分布式限流
+业内常用限流算法，包括计数法、漏桶法、令牌桶法，这些算法均需要实时统计当前T时刻的可发送流量数据，在大流量、低延迟的分布式检索场景下，很难实现； 结合业务特点并统计分析，发现全局可发送流量变化比较平滑，可以认为在M较小时，相邻的T-M时刻流量构成与T时刻差别不大，从而可以用T-M时刻的全局可发送流量F&amp;rsquo;近似代表T时刻的全局流量F。在T时刻时，每台实例均按照Q/F&amp;rsquo;的概率进行发送，就可以实现全局限流为Q的目标； 工程实现 使用Redis集群完成分布式可发送流量计数，具体如下：
+每个服务实例以M分钟（例如1分钟）为周期，累计可发送流量数f； 每个服务实例开启一个异步线程，每隔M分钟向Redis集群上报可发送流量数f，由Redis累加得到全局可发送流量F。上报完成后，该异步线程从Redis拉取M分钟前的可发送流量F'； 每个服务实例在处理单个可发送流量时，按Q/F&amp;rsquo;的概率决定是否发送，从而实现全局限流为Q的目标； 在Redis集群不可用时，降级为使用单机限流控制； 折中 T-M与T时刻的间隔周期M的设置，对性能及流量发送稳定性均有影响：
+M越小，越能及时反映流量的波动情况（例如流量尖峰），从而提升T时刻限流的准确性。但M越小，Redis访问量越大，需要更多机器资源； 反之，M越大，Redis压力下降，但限流准确性也会降低； 结合线上实验，将M设置为2分钟，既满足了限流准确性要求，又将机器资源消耗降到最低； 收益 单机限流存在的问题均能解决：
+限流最小精度，由N提升至1； 流量或服务实例变更时，均能自适应地调节发送概率，从而保证整体发送量稳定在Q附近；</description></item><item><title>数字的中文读法</title><link>https://wanglun.org/post/number-in-chinese/</link><pubDate>Sun, 09 Jun 2019 17:40:00 +0800</pubDate><guid>https://wanglun.org/post/number-in-chinese/</guid><description>题目 本次的编码练习题是“数字的中文读法”，需要完成数字与其中文读法之间的相互转换，例如：
+123 -&amp;gt; 一百二十三 200 -&amp;gt; 二百 201 -&amp;gt; 二百零一 2001 -&amp;gt; 二千零一 200000 -&amp;gt; 二十万 210000 -&amp;gt; 二十一万 210500 -&amp;gt; 二十一万零五百 123410500 -&amp;gt; 一亿二千三百四十一万零五百 2023400500 -&amp;gt; 二十亿二千三百四十万零五百 1002023400500 -&amp;gt; 一万零二十亿二千三百四十万零五百 动手实现 重点是分析中文读法的规律，尽量多写一些测试用例，以覆盖到不同的情况。示例代码如下：
+#include &amp;lt;string&amp;gt;#include &amp;lt;unordered_map&amp;gt;#include &amp;lt;cassert&amp;gt; // 可以处理最长13位的数字 std::string say_number_in_chinese_v1(long num) { // 单位映射 static const std::string units_map[] = {&amp;#34;&amp;#34;, &amp;#34;十&amp;#34;, &amp;#34;百&amp;#34;, &amp;#34;千&amp;#34;, &amp;#34;万&amp;#34;, &amp;#34;十&amp;#34;, &amp;#34;百&amp;#34;, &amp;#34;千&amp;#34;, &amp;#34;亿&amp;#34;, &amp;#34;十&amp;#34;, &amp;#34;百&amp;#34;, &amp;#34;千&amp;#34;, &amp;#34;万&amp;#34;}; // 数字映射 static const std::string digits_map[] = {&amp;#34;零&amp;#34;, &amp;#34;一&amp;#34;, &amp;#34;二&amp;#34;, &amp;#34;三&amp;#34;, &amp;#34;四&amp;#34;, &amp;#34;五&amp;#34;, &amp;#34;六&amp;#34;, &amp;#34;七&amp;#34;, &amp;#34;八&amp;#34;, &amp;#34;九&amp;#34;}; // 0直接返回 if (num == 0) { return digits_map[0]; } std::string ret; // 检测连续的0 bool zero_flag = false; int i = 0; while (num) { int digit = num % 10; if (digit) { ret = units_map[i] + ret; ret = digits_map[digit] + ret; zero_flag = false; } else { if (i % 4 == 0) { ret = units_map[i] + ret; } else if (!</description></item><item><title>主流数据库对比及应用场景举例</title><link>https://wanglun.org/post/database-comparison/</link><pubDate>Mon, 29 Apr 2019 19:00:00 +0800</pubDate><guid>https://wanglun.org/post/database-comparison/</guid><description>简介 在进行软件系统设计时，数据库选型是必不可少的工作。本文对当前主流的数据库进行简单对比，包括如下数据库：
+MySQL1: 是一个高性能、低成本、可靠性好的开源关系型数据库，MariaDB是它的一个开源分支。 Redis2: 是一个使用ANSI C编写的开源、支持网络、基于内存、可选持久性的KV存储数据库。 ElasticSearch3: 是一个基于Lucene库的搜索引擎，使用Java实现。 MongoDB4: 是一种面向文档的NoSQL数据库，使用C++实现。 HBase5: 是一个开源的NoSQL数据库，它参考了谷歌的BigTable建模，使用Java实现。 SQLite6: 是一个开源的关系型数据库，SQLite不是一个CS结构的数据库引擎，而是被集成在用户程序中，使用C实现。 LevelDB7: 是一个由Google研发的KV嵌入式数据库，使用C++实现。 对比 说明：
+评价粒度很粗，只适合直观感受。应用时，需要结合场景，具体分析及测试。 评价分五级：好、较好、一般、较差、差。 项目 MySQL Redis ElasticSearch MongoDB HBase SQLite LevelDB 数据规模 较好 差 较好 较好 好 一般 一般 随机读取 较好 好 一般 较好 较好 较好 较差 顺序读取 较好 好 一般 较好 较好 较好 较好 随机写入 一般 好 差 一般 较好 一般 较好 顺序写入 较好 好 差 较好 较好 较好 较好 检索功能 一般 差 好 较好 差 一般 差 关联查询 好 差 较好 一般 差 较好 差 硬件要求 低 低 高 中 中 低 低 事务支持 ACID ACID8 无 ACID9 无 ACID10 无 CS架构 是 是 是 是 是 否 否 主键索引 支持 支持 支持 支持 支持 支持 支持 二级索引 支持 不支持 支持 支持 不支持 支持 不支持 应用场景举例 MySQL 复杂关联查询 对事务、安全性要求高的OLTP(On-Line Transaction Processing)类业务 不适合大文本、图片等二进制存储 Redis 缓存等对读写性能要求高的场景 简单消息队列、计数器等 ElasticSearch 全文检索、搜索引擎 聚合分析、数据可视化 MongoDB 图片等文档小规模存储(使用GridFS可支持大文件) 无复杂关联查询、schema变更频繁的业务 HBase 海量数据 检索及关联查询需要依赖其它服务（例如ElasticSearch） SQLite 客户端软件嵌入式存储，如Mobile App等 服务端单机少量数据存储，如个人Blog、服务配置信息等 LevelDB 客户端软件存储，如Chrome的IndexDB等 随机写入比较多，随机读取较少的业务 参考资料 https://en.</description></item><item><title>阻塞队列(Blocking Queue)</title><link>https://wanglun.org/post/minilib-blocking-queue/</link><pubDate>Sat, 27 Apr 2019 16:00:33 +0800</pubDate><guid>https://wanglun.org/post/minilib-blocking-queue/</guid><description>简介 Blocking Queue是基于管程(Monitors)实现的一种多线程编程中常用的数据结构 Blocking Queue可以方便地实现线程间的资源分发，用于任务队列、生产者-消费者问题。 应用场景 任务队列 生产者-消费者问题 动手实现 在minilib中，使用queue作为基础队列，使用mutex和condition_variable进行线程同步，实现的固定容量的阻塞队列如下：
+#ifndef MINILIB_BLOCKING_QUEUE_H #define MINILIB_BLOCKING_QUEUE_H #include &amp;lt;condition_variable&amp;gt;#include &amp;lt;mutex&amp;gt;#include &amp;lt;queue&amp;gt; namespace minilib { // blocking_queue是一个固定大小的阻塞队列， // push时，如果已满，则使用条件变量阻塞等待 // pop时，如果已空，则使用条件变量阻塞等待 template &amp;lt;typename T&amp;gt; class blocking_queue { public: typedef T type; explicit blocking_queue(size_t size) : size_(size) {} ~blocking_queue() {} void pop(type&amp;amp; v) { // 需要使用unique_lock，因为在wait时先会原子的unlock，若满足条件则重新lock std::unique_lock&amp;lt;std::mutex&amp;gt; lk(cv_m_); while (queue_.empty()) { cv_.wait(lk); } v = std::move(queue_.front()); queue_.pop(); cv_.notify_one(); } void push(const type&amp;amp; v) { std::unique_lock&amp;lt;std::mutex&amp;gt; lk(cv_m_); while (queue_.</description></item></channel></rss>
